@@ -30,15 +30,12 @@ medianas_mejor <- c(
   median(tiempoMejor$i10)
 )
 
-n_vector = rep(0,11)
-for(i in 0:10){
-  n_vector[i+1] = 1000*(2^i)
-}
+n_vector = n_vector <- 1000 * 2^(0:10)
 
-# --- Nube de puntos superpuesta ---
+# --- Nube de puntos recta de regresión ---
 plot(n_vector, medianas_peor,
      main = "Peor vs Mejor Caso",
-     xlab = "Iteración i de n = 1000 * 2^i",
+     xlab = "Tamaño de entrada n",
      ylab = "Mediana del Tiempo (μs)",
      pch = 19,
      col = "blue",
@@ -53,13 +50,51 @@ legend("topleft",
        col = c("blue", "green"),
        pch = 19)
 
-modelo_peor <- lm(medianas_peor ~ n_vector)
-modelo_mejor <- lm(medianas_mejor ~ n_vector)
+modelo_peor_uno <- lm(medianas_peor ~ n_vector) #O(n)
+modelo_peor_dos <- lm(medianas_peor ~ I(n_vector*log(n_vector))) #O(n*log(n)) <- Orden real del algoritmo
+r_cuadrado_peor_uno = summary(modelo_peor_uno)$r.squared #O(n)
+r_cuadrado_peor_dos = summary(modelo_peor_dos)$r.squared #O(n*log(n))
 
-abline(modelo_peor)
-abline(modelo_mejor)
+modelo_mejor_uno <- lm(medianas_mejor ~ n_vector) #O(n)  <- Orden real del algoritmo
+modelo_mejor_dos <- lm(medianas_mejor ~ I(n_vector*log(n_vector))) #O(n*log(n))
+r_cuadrado_mejor_uno = summary(modelo_mejor_uno)$r.squared
+r_cuadrado_mejor_dos = summary(modelo_mejor_dos)$r.squared
 
-r_cuadrado_peor = summary(modelo_peor)$r.squared
-r_cuadrado_mejor = summary(modelo_mejor)$r.squared
+c('Peor O(n)'=r_cuadrado_peor_uno,'Peor O(n*log(n))'=r_cuadrado_peor_dos)
+c('Mejor O(n)'=r_cuadrado_mejor_uno,'Mejor O(n*log(n))'=r_cuadrado_mejor_dos)
 
-c(r_cuadrado_peor=r_cuadrado_peor,r_cuadrado_mejor=r_cuadrado_mejor)
+# --- Nube de puntos recta de regresión ---
+plot(n_vector, medianas_peor,
+     main = "Peor caso",
+     xlab = "Tamaño de entrada n",
+     ylab = "Mediana del Tiempo (μs)",
+     pch = 19,
+     col = "blue",
+     ylim = range(c(medianas_mejor, medianas_peor)))  # ajustar rango Y
+
+legend("topleft",
+       legend = c("Peor Caso", expression(paste("Ajuste ", Theta(n*log(n))))),
+       col = c("blue", "red"),   # colores
+       pch = c(19, NA),             # primer punto, segundo nada
+       lty = c(NA, 1),              # primer sin línea, segundo línea sólida
+       lwd = c(NA, 2))              # grosor de la línea
+
+lines(n_vector, predict(modelo_peor_dos), col="red", lwd=2)
+
+# --- Nube de puntos recta de regresión ---
+plot(n_vector, medianas_mejor,
+     main = "Mejor caso",
+     xlab = "Tamaño de entrada n",
+     ylab = "Mediana del Tiempo (μs)",
+     pch = 19,
+     col = "blue",
+     ylim = range(c(medianas_mejor, medianas_peor)))  # ajustar rango Y
+
+legend("topleft",
+       legend = c("Mejor Caso", expression(paste("Ajuste ", Theta(n)))),
+       col = c("blue", "red"),   # colores
+       pch = c(19, NA),             # primer punto, segundo nada
+       lty = c(NA, 1),              # primer sin línea, segundo línea sólida
+       lwd = c(NA, 2))              # grosor de la línea
+
+lines(n_vector, predict(modelo_mejor_uno), col="red", lwd=2)
