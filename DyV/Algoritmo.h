@@ -19,7 +19,7 @@ public:
     static Resultado iterativo(const std::unordered_set<char> conjunto, const std::string & cadena, int inicio, int final);
 
 private:
-    static Resultado merge(Resultado izq, Resultado der, Resultado centro);
+    static Resultado merge(Resultado izq, Resultado der,const std::unordered_set<char> & conjunto, const std::string & cadena, int indexMitad);
 
 
 };

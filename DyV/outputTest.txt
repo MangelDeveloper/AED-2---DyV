@@ -1,12 +1,40 @@
-i0,i1,i2,i3,i4,i5,i6,i7,i8,i9,i10
-1610,3204,5334,9902,17913,29842,54508,92216,185233,374549,743229
-741,1452,2879,5990,11443,22902,46070,91888,199857,371943,734027
-727,1471,2894,5698,11442,23051,45886,91667,198135,373209,735246
-734,1437,2901,5729,11566,23955,49924,94243,192771,366944,734682
-759,1455,2924,5729,11530,28678,50254,93256,184721,368485,736139
-851,1424,2846,5763,11538,23146,47686,92411,191198,369204,735474
-733,1418,2860,5881,11522,22994,45696,91694,184447,368631,734679
-739,1430,2894,5911,11539,23107,45995,92003,183901,369195,742466
-727,1441,2880,6007,11824,25780,49103,92288,186843,372254,735745
-728,1465,2923,5747,11589,22995,45832,91748,194939,367982,738331
-731,1483,2909,6046,11672,27015,51449,91771,199840,371320,741036
+Entrada: 'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz'
+Tamaño entrada: '31'
+Conjunto: { e d c b a }
+Salida esperada (Iterativo):
+   Num subcadenas: 0
+   Posiciones: 
+Resultado (DyV):
+   Num subcadenas: 0
+   Posiciones: 
+
+Entrada: 'abcdeabcdeabcdeabcdeabcdeabcdea'
+Tamaño entrada: '31'
+Conjunto: { e d c b a }
+Salida esperada (Iterativo):
+   Num subcadenas: 27
+   Posiciones: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 
+Resultado (DyV):
+   Num subcadenas: 27
+   Posiciones: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 
+
+Entrada: 'lkmnacbfadvxsa'
+Tamaño entrada: '14'
+Conjunto: { e d c b a }
+Salida esperada (Iterativo):
+   Num subcadenas: 0
+   Posiciones: 
+Resultado (DyV):
+   Num subcadenas: 0
+   Posiciones: 
+
+Entrada: 'men'
+Tamaño entrada: '3'
+Conjunto: { e d c b a }
+Salida esperada (Iterativo):
+   Num subcadenas: 0
+   Posiciones: 
+Resultado (DyV):
+   Num subcadenas: 0
+   Posiciones: 
+
