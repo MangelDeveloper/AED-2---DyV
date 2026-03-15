@@ -12,6 +12,7 @@ Dada una cadena **A** con *n* caracteres y un conjunto **S** de 5 caracteres dis
 - **Salida:**  
   - Número de subcadenas válidas  
   - Posiciones donde comienzan dichas subcadenas
+- **Ejemplo**
   - Entrada:
         - A = acbfabcedfcbcbadec
         - S = {a, b, c, d, e}
