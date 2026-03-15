@@ -159,7 +159,7 @@ void Controlador::test_tiempo(bool peor) {
                 int letraConjunto = 0;
                 for (int z = 0; z < tamEntrada; z++) {
                     cadena += conjuntoReferencia[letraConjunto];
-                    letraConjunto = (letraConjunto+1)%TAM_CONJUNTO
+                    letraConjunto = (letraConjunto+1)%TAM_CONJUNTO;
                 }
                 
             }else {
