@@ -7,7 +7,7 @@
 using namespace std;
 
 
-
+//ITERATIVO
 Algoritmo::Resultado Algoritmo::iterativo(const unordered_set<char> conjunto, const string & cadena, int inicio, int final) {
     const int TAM_CONJUNTO = conjunto.size();
     int longitud = final-inicio+1;
