@@ -158,10 +158,10 @@ void Controlador::test_tiempo(bool peor) {
                 //conjunto. Ya que tiene que ir realizando el merge de los resultados.
                 int letraConjunto = 0;
                 for (int z = 0; z < tamEntrada; z++) {
-                    cadena += conjuntoReferencia[letraConjunto++];
-                    if (letraConjunto == 5)
-                        letraConjunto = 0;
+                    cadena += conjuntoReferencia[letraConjunto];
+                    letraConjunto = (letraConjunto+1)%TAM_CONJUNTO;
                 }
+                
             }else {
                 //El mejor caso es que la cadena nunca cumpla la condición.
                 //Ya que al hacer el merge de los resultados no tiene que hacer nada.
