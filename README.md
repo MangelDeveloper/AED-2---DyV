@@ -13,11 +13,10 @@ Dada una cadena **A** con *n* caracteres y un conjunto **S** de 5 caracteres dis
   - Número de subcadenas válidas  
   - Posiciones donde comienzan dichas subcadenas
   - Entrada:
-        A = acbfabcedfcbcbadec
-        S = {a, b, c, d, e}
-
-        Salida:
-        3 subcadenas válidas en las posiciones 5, 13 y 14 (empezando desde 1)
+        - A = acbfabcedfcbcbadec
+        - S = {a, b, c, d, e}
+  - Salida:
+        - 3 subcadenas válidas en las posiciones 5, 13 y 14 (empezando desde 1)
 
 
 ## Implementación
