@@ -1,7 +1,7 @@
 # AED2 - Divide y Vencerás  
 **Samuel Espín Santos y Miguel Ángel Tornel Martínez**
 
-Dada una cadena **A** con *n* caracteres y un conjunto **S** de 5 caracteres distintos, devolver todas las subcadenas de **A** formadas por los 5 elementos de **S** sin repetir (permutaciones sin repetición). Además, se debe obtener el número de subcadenas y la posición en la que empiezan dentro de la cadena **A**.
+Dada una cadena **A** con *n* caracteres y un conjunto **S** de 5 caracteres, devolver todas las subcadenas de **A** formadas por los 5 elementos de **S** sin repetir (permutaciones sin repetición). Además, se debe obtener el número de subcadenas y la posición en la que empiezan dentro de la cadena **A**.
 
 ## Descripción del problema
 
